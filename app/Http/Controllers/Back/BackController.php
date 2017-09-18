@@ -11,6 +11,6 @@ class BackController extends Controller
     public $page;
     public function __construct()
     {
-        $this->page=$this->pagePath.'/Pages';
+        $this->page=$this->pagePath.'Pages/';
     }
 }

@@ -1,3 +1,4 @@
+
 @extends('Back.MasterPage.master')
 
 @section('container')
@@ -6,6 +7,8 @@
     <body>
 
     <section id="container" >
+
+
         <!-- **********************************************************************************************************************************************************
         TOP BAR CONTENT & NOTIFICATIONS
         *********************************************************************************************************************************************************** -->
@@ -165,6 +168,7 @@
         </header>
         <!--header end-->
 
+
         <!-- **********************************************************************************************************************************************************
         MAIN SIDEBAR MENU
         *********************************************************************************************************************************************************** -->
@@ -178,33 +182,20 @@
                     <h5 class="centered">Aayushma Shakya</h5>
 
                     <li class="mt">
-                    <li class="active"><a href="{{route('admin')}}">
-                            <i class="fa fa-dashboard"></i> Dashboard</a></li>
-                        {{--<a class="active" href="index.html">--}}
-                            {{--<i class="fa fa-dashboard"></i>--}}
-                            {{--<span>Dashboard</span>--}}
-                        {{--</a>--}}
+                        <a class="active" href="index.html">
+                            <i class="fa fa-dashboard"></i>
+                            <span>Dashboard</span>
+                        </a>
                     </li>
                     <li class="treeview">
                         <a href="#"><i class="fa fa-customer"></i> <span>Customer</span>
                             <span class="pull-right-container">
-                             <i class="fa fa-angle-left pull-right"></i>
-                             </span>
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
                         </a>
                         <ul class="treeview-menu">
                             <li><a href="{{route('users')}}">Show users</a></li>
-                            <li><a href="{{route('addUser')}}">Add Users</a></li>
-                        </ul>
-                    </li>
-                    <li class="treeview">
-                        <a href="#"><i class="fa fa-folder"></i> <span>Menus</span>
-                            <span class="pull-right-container">
-                             <i class="fa fa-angle-left pull-right"></i>
-                             </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="">Show users</a></li>
-                            <li><a href="{{route('addMenu')}}">Add Menu</a></li>
+                            <li><a href="#">Add Users</a></li>
                         </ul>
                     </li>
 
@@ -225,7 +216,40 @@
         *********************************************************************************************************************************************************** -->
         <!--main content start-->
         <section id="main-content">
+
             <section class="wrapper">
+                <h1>Show Users</h1>
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{session('success')}}
+                    </div>
+                @endif
+
+            <table class="table">
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Image</th>
+                    <th>Action</th>
+                </tr>
+                @forelse($userData as $key=>$value)
+                <tr>
+                    <td>{{++$key}}</td>
+                    <td>{{$value->name}}</td>
+                    <td>{{$value->email}}</td>
+                    <td>{{$value->status}}</td>
+                    <td><img src="{{URL::to('public/UserImages/'.$value->image)}}" width="50px" alt=" "></td>
+                    <td>
+                        <a href="" class="btn btn-danger btn-sm">Delete</a>
+                    </td>
+                </tr>
+                    @empty
+                @endforelse
+
+            </table>
+                {{$userData->render()}}
 
                 <div class="row">
                     <div class="col-lg-9 main-chart">
@@ -234,144 +258,144 @@
 
 
 
-                    <!-- **********************************************************************************************************************************************************
-                    RIGHT SIDEBAR CONTENT
-                    *********************************************************************************************************************************************************** -->
+                            <!-- **********************************************************************************************************************************************************
+                            RIGHT SIDEBAR CONTENT
+                            *********************************************************************************************************************************************************** -->
 
-                    <div class="col-lg-3 ds">
-                        <!--COMPLETED ACTIONS DONUTS CHART-->
-                        <h3>NOTIFICATIONS</h3>
+                            <div class="col-lg-3 ds">
+                                <!--COMPLETED ACTIONS DONUTS CHART-->
+                                <h3>NOTIFICATIONS</h3>
 
-                        <!-- First Action -->
-                        <div class="desc">
-                            <div class="thumb">
-                                <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                            </div>
-                            <div class="details">
-                                <p><muted>2 Minutes Ago</muted><br/>
-                                    <a href="#">James Brown</a> subscribed to your newsletter.<br/>
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Second Action -->
-                        <div class="desc">
-                            <div class="thumb">
-                                <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                            </div>
-                            <div class="details">
-                                <p><muted>3 Hours Ago</muted><br/>
-                                    <a href="#">Diana Kennedy</a> purchased a year subscription.<br/>
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Third Action -->
-                        <div class="desc">
-                            <div class="thumb">
-                                <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                            </div>
-                            <div class="details">
-                                <p><muted>7 Hours Ago</muted><br/>
-                                    <a href="#">Brandon Page</a> purchased a year subscription.<br/>
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Fourth Action -->
-                        <div class="desc">
-                            <div class="thumb">
-                                <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                            </div>
-                            <div class="details">
-                                <p><muted>11 Hours Ago</muted><br/>
-                                    <a href="#">Mark Twain</a> commented your post.<br/>
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Fifth Action -->
-                        <div class="desc">
-                            <div class="thumb">
-                                <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                            </div>
-                            <div class="details">
-                                <p><muted>18 Hours Ago</muted><br/>
-                                    <a href="#">Daniel Pratt</a> purchased a wallet in your store.<br/>
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- USERS ONLINE SECTION -->
-                        <h3>TEAM MEMBERS</h3>
-                        <!-- First Member -->
-                        <div class="desc">
-                            <div class="thumb">
-                                <img class="img-circle" src="assets/img/ui-divya.jpg" width="35px" height="35px" align="">
-                            </div>
-                            <div class="details">
-                                <p><a href="#">DIVYA MANIAN</a><br/>
-                                    <muted>Available</muted>
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Second Member -->
-                        <div class="desc">
-                            <div class="thumb">
-                                <img class="img-circle" src="assets/img/ui-sherman.jpg" width="35px" height="35px" align="">
-                            </div>
-                            <div class="details">
-                                <p><a href="#">DJ SHERMAN</a><br/>
-                                    <muted>I am Busy</muted>
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Third Member -->
-                        <div class="desc">
-                            <div class="thumb">
-                                <img class="img-circle" src="assets/img/ui-danro.jpg" width="35px" height="35px" align="">
-                            </div>
-                            <div class="details">
-                                <p><a href="#">DAN ROGERS</a><br/>
-                                    <muted>Available</muted>
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Fourth Member -->
-                        <div class="desc">
-                            <div class="thumb">
-                                <img class="img-circle" src="assets/img/ui-zac.jpg" width="35px" height="35px" align="">
-                            </div>
-                            <div class="details">
-                                <p><a href="#">Zac Sniders</a><br/>
-                                    <muted>Available</muted>
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Fifth Member -->
-                        <div class="desc">
-                            <div class="thumb">
-                                <img class="img-circle" src="assets/img/ui-sam.jpg" width="35px" height="35px" align="">
-                            </div>
-                            <div class="details">
-                                <p><a href="#">Marcel Newman</a><br/>
-                                    <muted>Available</muted>
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- CALENDAR-->
-                        <div id="calendar" class="mb">
-                            <div class="panel green-panel no-margin">
-                                <div class="panel-body">
-                                    <div id="date-popover" class="popover top" style="cursor: pointer; disadding: block; margin-left: 33%; margin-top: -50px; width: 175px;">
-                                        <div class="arrow"></div>
-                                        <h3 class="popover-title" style="disadding: none;"></h3>
-                                        <div id="date-popover-content" class="popover-content"></div>
+                                <!-- First Action -->
+                                <div class="desc">
+                                    <div class="thumb">
+                                        <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
                                     </div>
-                                    <div id="my-calendar"></div>
+                                    <div class="details">
+                                        <p><muted>2 Minutes Ago</muted><br/>
+                                            <a href="#">James Brown</a> subscribed to your newsletter.<br/>
+                                        </p>
+                                    </div>
                                 </div>
-                            </div>
-                        </div><!-- / calendar -->
+                                <!-- Second Action -->
+                                <div class="desc">
+                                    <div class="thumb">
+                                        <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        <p><muted>3 Hours Ago</muted><br/>
+                                            <a href="#">Diana Kennedy</a> purchased a year subscription.<br/>
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Third Action -->
+                                <div class="desc">
+                                    <div class="thumb">
+                                        <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        <p><muted>7 Hours Ago</muted><br/>
+                                            <a href="#">Brandon Page</a> purchased a year subscription.<br/>
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Fourth Action -->
+                                <div class="desc">
+                                    <div class="thumb">
+                                        <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        <p><muted>11 Hours Ago</muted><br/>
+                                            <a href="#">Mark Twain</a> commented your post.<br/>
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Fifth Action -->
+                                <div class="desc">
+                                    <div class="thumb">
+                                        <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
+                                    </div>
+                                    <div class="details">
+                                        <p><muted>18 Hours Ago</muted><br/>
+                                            <a href="#">Daniel Pratt</a> purchased a wallet in your store.<br/>
+                                        </p>
+                                    </div>
+                                </div>
 
-                    </div><!-- /col-lg-3 -->
-                </div><! --/row -->
+                                <!-- USERS ONLINE SECTION -->
+                                <h3>TEAM MEMBERS</h3>
+                                <!-- First Member -->
+                                <div class="desc">
+                                    <div class="thumb">
+                                        <img class="img-circle" src="assets/img/ui-divya.jpg" width="35px" height="35px" align="">
+                                    </div>
+                                    <div class="details">
+                                        <p><a href="#">DIVYA MANIAN</a><br/>
+                                            <muted>Available</muted>
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Second Member -->
+                                <div class="desc">
+                                    <div class="thumb">
+                                        <img class="img-circle" src="assets/img/ui-sherman.jpg" width="35px" height="35px" align="">
+                                    </div>
+                                    <div class="details">
+                                        <p><a href="#">DJ SHERMAN</a><br/>
+                                            <muted>I am Busy</muted>
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Third Member -->
+                                <div class="desc">
+                                    <div class="thumb">
+                                        <img class="img-circle" src="assets/img/ui-danro.jpg" width="35px" height="35px" align="">
+                                    </div>
+                                    <div class="details">
+                                        <p><a href="#">DAN ROGERS</a><br/>
+                                            <muted>Available</muted>
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Fourth Member -->
+                                <div class="desc">
+                                    <div class="thumb">
+                                        <img class="img-circle" src="assets/img/ui-zac.jpg" width="35px" height="35px" align="">
+                                    </div>
+                                    <div class="details">
+                                        <p><a href="#">Zac Sniders</a><br/>
+                                            <muted>Available</muted>
+                                        </p>
+                                    </div>
+                                </div>
+                                <!-- Fifth Member -->
+                                <div class="desc">
+                                    <div class="thumb">
+                                        <img class="img-circle" src="assets/img/ui-sam.jpg" width="35px" height="35px" align="">
+                                    </div>
+                                    <div class="details">
+                                        <p><a href="#">Marcel Newman</a><br/>
+                                            <muted>Available</muted>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- CALENDAR-->
+                                <div id="calendar" class="mb">
+                                    <div class="panel green-panel no-margin">
+                                        <div class="panel-body">
+                                            <div id="date-popover" class="popover top" style="cursor: pointer; disadding: block; margin-left: 33%; margin-top: -50px; width: 175px;">
+                                                <div class="arrow"></div>
+                                                <h3 class="popover-title" style="disadding: none;"></h3>
+                                                <div id="date-popover-content" class="popover-content"></div>
+                                            </div>
+                                            <div id="my-calendar"></div>
+                                        </div>
+                                    </div>
+                                </div><!-- / calendar -->
+
+                            </div><!-- /col-lg-3 -->
+                        </div><! --/row -->
             </section>
         </section>
 
