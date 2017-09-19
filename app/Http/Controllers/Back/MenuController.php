@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Back;
 
+use App\Model\Menu;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,11 +15,10 @@ class MenuController extends BackController
         if($request->isMethod('post')){
             $data['name']=$request['name'];
 
-            if(Menu::create($data)){
-                return redirect()->route('addMenu')->with('success',
-                    'Menu was inserted');
-
-            }
+           if(Menu::create($data)){
+               return redirect()->route('addMenu')->with('success',
+                   'Menu was inserted');
+           }
         }
 
     }

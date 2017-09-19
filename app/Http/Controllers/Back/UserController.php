@@ -55,21 +55,38 @@ class UserController extends BackController
 
     }
 
-    public function login(Request $request){
-        if($request->isMethod('get')){
-            return view($this->page.'Login.login');
+    public function login(Request $request)
+    {
+        if ($request->isMethod('get')) {
+            return view($this->page . 'Login.login');
         }
-        if($request->isMethod('post')){
-            $email=$request->email;
-            $password=$request->password;
-            if(Auth::attempt(['email'=>$email,'password'=>$password])){
-                echo "yes";
-            }
-            else{
-                echo "no";
-            }
+        if ($request->isMethod('post')) {
+            $email = $request->email;
+            $password = $request->password;
 
+
+            if (Auth::attempt(['email' => $email, 'password' => $password])) {
+                return redirect()->intended('admin');
+            }
+            echo "email & password not match";
         }
 
     }
+//    public function login(Request $request){
+//        if($request->isMethod('get')){
+//            return view($this->page.'Login.login');
+//        }
+//        if($request->isMethod('post')){
+//            $email=$request->email;
+//            $password=$request->password;
+//            if(Auth::attempt(['email'=>$email,'password'=>$password])){
+//                return redirect()->intended('admin');
+//            }
+//            else{
+//               echo "email and password not valid";
+//            }
+//
+//        }
+//
+//    }
 }

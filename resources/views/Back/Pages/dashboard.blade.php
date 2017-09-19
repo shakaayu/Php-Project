@@ -15,7 +15,7 @@
                 <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
             </div>
             <!--logo start-->
-            <a href="index.html" class="logo"><b>DASHGUM FREE</b></a>
+            <a href="index.html" class="logo"><b>DASHBOARD</b></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
@@ -157,11 +157,6 @@
                 </ul>
                 <!--  notification end -->
             </div>
-            <div class="top-menu">
-                <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
-                </ul>
-            </div>
         </header>
         <!--header end-->
 
@@ -174,46 +169,44 @@
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
 
-                    <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+                    <p class="centered"><a href="profile.html"><img src="public/Gallery/aayu.jpg" class="img-circle" width="60"></a></p>
                     <h5 class="centered">Aayushma Shakya</h5>
 
                     <li class="mt">
                     <li class="active"><a href="{{route('admin')}}">
-                            <i class="fa fa-dashboard"></i> Dashboard</a></li>
-                        {{--<a class="active" href="index.html">--}}
-                            {{--<i class="fa fa-dashboard"></i>--}}
-                            {{--<span>Dashboard</span>--}}
-                        {{--</a>--}}
-                    </li>
-                    <li class="treeview">
-                        <a href="#"><i class="fa fa-customer"></i> <span>Customer</span>
-                            <span class="pull-right-container">
-                             <i class="fa fa-angle-left pull-right"></i>
-                             </span>
-                        </a>
-                        <ul class="treeview-menu">
+                            <i class="fa fa-dashboard"></i> DASHBOARD</a></li>
+
+                    <li class="Customer">
+                        <a href="#" class="fa fa-user" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> CUSTOMER<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
                             <li><a href="{{route('users')}}">Show users</a></li>
                             <li><a href="{{route('addUser')}}">Add Users</a></li>
                         </ul>
                     </li>
-                    <li class="treeview">
-                        <a href="#"><i class="fa fa-folder"></i> <span>Menus</span>
-                            <span class="pull-right-container">
-                             <i class="fa fa-angle-left pull-right"></i>
-                             </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="">Show users</a></li>
+
+                    <li class="Menu">
+                        <a href="#" class="fa fa-folder" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> MENU<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="">Show Menu</a></li>
                             <li><a href="{{route('addMenu')}}">Add Menu</a></li>
                         </ul>
                     </li>
 
+                    <li class="Gallery">
+                        <a href="#" class="fa fa-image" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> GALLERY<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
 
+                            <li><a href="{{route('addImage')}}">Add Images</a></li>
+                        </ul>
+                    </li>
+                    <li class="Description">
+                        <a href="#" class="fa fa-newspaper-o" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> DESCRIPTION<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="">Show Description</a></li>
 
-
-
-
-
+                            <li><a href="{{route('addDescription')}}">Add Description</a></li>
+                        </ul>
+                    </li>
                 </ul>
                 <!-- sidebar menu end-->
             </div>
@@ -238,155 +231,19 @@
                     RIGHT SIDEBAR CONTENT
                     *********************************************************************************************************************************************************** -->
 
-                    <div class="col-lg-3 ds">
-                        <!--COMPLETED ACTIONS DONUTS CHART-->
-                        <h3>NOTIFICATIONS</h3>
-
-                        <!-- First Action -->
-                        <div class="desc">
-                            <div class="thumb">
-                                <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                            </div>
-                            <div class="details">
-                                <p><muted>2 Minutes Ago</muted><br/>
-                                    <a href="#">James Brown</a> subscribed to your newsletter.<br/>
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Second Action -->
-                        <div class="desc">
-                            <div class="thumb">
-                                <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                            </div>
-                            <div class="details">
-                                <p><muted>3 Hours Ago</muted><br/>
-                                    <a href="#">Diana Kennedy</a> purchased a year subscription.<br/>
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Third Action -->
-                        <div class="desc">
-                            <div class="thumb">
-                                <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                            </div>
-                            <div class="details">
-                                <p><muted>7 Hours Ago</muted><br/>
-                                    <a href="#">Brandon Page</a> purchased a year subscription.<br/>
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Fourth Action -->
-                        <div class="desc">
-                            <div class="thumb">
-                                <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                            </div>
-                            <div class="details">
-                                <p><muted>11 Hours Ago</muted><br/>
-                                    <a href="#">Mark Twain</a> commented your post.<br/>
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Fifth Action -->
-                        <div class="desc">
-                            <div class="thumb">
-                                <span class="badge bg-theme"><i class="fa fa-clock-o"></i></span>
-                            </div>
-                            <div class="details">
-                                <p><muted>18 Hours Ago</muted><br/>
-                                    <a href="#">Daniel Pratt</a> purchased a wallet in your store.<br/>
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- USERS ONLINE SECTION -->
-                        <h3>TEAM MEMBERS</h3>
-                        <!-- First Member -->
-                        <div class="desc">
-                            <div class="thumb">
-                                <img class="img-circle" src="assets/img/ui-divya.jpg" width="35px" height="35px" align="">
-                            </div>
-                            <div class="details">
-                                <p><a href="#">DIVYA MANIAN</a><br/>
-                                    <muted>Available</muted>
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Second Member -->
-                        <div class="desc">
-                            <div class="thumb">
-                                <img class="img-circle" src="assets/img/ui-sherman.jpg" width="35px" height="35px" align="">
-                            </div>
-                            <div class="details">
-                                <p><a href="#">DJ SHERMAN</a><br/>
-                                    <muted>I am Busy</muted>
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Third Member -->
-                        <div class="desc">
-                            <div class="thumb">
-                                <img class="img-circle" src="assets/img/ui-danro.jpg" width="35px" height="35px" align="">
-                            </div>
-                            <div class="details">
-                                <p><a href="#">DAN ROGERS</a><br/>
-                                    <muted>Available</muted>
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Fourth Member -->
-                        <div class="desc">
-                            <div class="thumb">
-                                <img class="img-circle" src="assets/img/ui-zac.jpg" width="35px" height="35px" align="">
-                            </div>
-                            <div class="details">
-                                <p><a href="#">Zac Sniders</a><br/>
-                                    <muted>Available</muted>
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Fifth Member -->
-                        <div class="desc">
-                            <div class="thumb">
-                                <img class="img-circle" src="assets/img/ui-sam.jpg" width="35px" height="35px" align="">
-                            </div>
-                            <div class="details">
-                                <p><a href="#">Marcel Newman</a><br/>
-                                    <muted>Available</muted>
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- CALENDAR-->
-                        <div id="calendar" class="mb">
-                            <div class="panel green-panel no-margin">
-                                <div class="panel-body">
-                                    <div id="date-popover" class="popover top" style="cursor: pointer; disadding: block; margin-left: 33%; margin-top: -50px; width: 175px;">
-                                        <div class="arrow"></div>
-                                        <h3 class="popover-title" style="disadding: none;"></h3>
-                                        <div id="date-popover-content" class="popover-content"></div>
-                                    </div>
-                                    <div id="my-calendar"></div>
-                                </div>
-                            </div>
-                        </div><!-- / calendar -->
-
-                    </div><!-- /col-lg-3 -->
-                </div><! --/row -->
+                   --}}
+                </div>
             </section>
         </section>
-
-        <!--main content end-->
-        <!--footer start-->
-        <footer class="site-footer">
-            <div class="text-center">
-                2014 - Alvarez.is
-                <a href="index.html#" class="go-top">
-                    <i class="fa fa-angle-up"></i>
-                </a>
-            </div>
-        </footer>
-        <!--footer end-->
     </section>
+    <footer class="site-footer">
+        <div class="text-center">
+            2017 Vintage Coffee and Cafe
+            <a href="index.html#" class="go-top">
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </div>
+    </footer>
 
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>

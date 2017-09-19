@@ -160,11 +160,6 @@
                 </ul>
                 <!--  notification end -->
             </div>
-            <div class="top-menu">
-                <ul class="nav pull-right top-menu">
-                    <li><a class="logout" href="login.html">Logout</a></li>
-                </ul>
-            </div>
         </header>
         <!--header end-->
 
@@ -178,7 +173,7 @@
                 <!-- sidebar menu start-->
                 <ul class="sidebar-menu" id="nav-accordion">
 
-                    <p class="centered"><a href="profile.html"><img src="assets/img/ui-sam.jpg" class="img-circle" width="60"></a></p>
+                    <p class="centered"><a href="profile.html"><img src="public/Gallery/aayu.jpg" class="img-circle" width="60"></a></p>
                     <h5 class="centered">Aayushma Shakya</h5>
 
                     <li class="mt">
@@ -190,20 +185,14 @@
                     <li class="treeview">
                         <a href="#"><i class="fa fa-customer"></i> <span>Customer</span>
                             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                            </span>
                         </a>
                         <ul class="treeview-menu">
                             <li><a href="{{route('users')}}">Show users</a></li>
                             <li><a href="#">Add Users</a></li>
                         </ul>
                     </li>
-
-
-
-
-
-
                 </ul>
                 <!-- sidebar menu end-->
             </div>
@@ -215,9 +204,7 @@
         *********************************************************************************************************************************************************** -->
         <!--main content start-->
         <section id="main-content">
-
             <section class=".mainPageManage wrapper">
-
                 <div class="row">
                     <div class="col-md-12">
                         <h1><i class="fa fa-user"></i> Add Users</h1>
@@ -236,23 +223,21 @@
                             <div class="form-group">
                                 <label for="name"> User Name</label>
                                 <input type="text" name="name" class="form-control" id="name">
-
                             </div>
                         </div>
                         <div class="col-md-10">
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="text" name="email" class="form-control" id="email">
+                                    <input type="text" name="email" class="form-control" id="email">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="utype"> User Type</label>
-
-                                <select name="utype" id="utype" class="form-control">
-                                    <option value="user">User</option>
-                                    <option value="admin">Admin</option>
-                                </select>
+                                    <select name="utype" id="utype" class="form-control">
+                                        <option value="user">User</option>
+                                        <option value="admin">Admin</option>
+                                    </select>
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -281,24 +266,23 @@
                                 <button type="submit"class="btn btn-success" >Add User</button>
                             </div>
                         </div>
-                            </form>
+                        </form>
                     </div>
                 </div>
             </section>
         </section>
-
-        <!--main content end-->
-        <!--footer start-->
-        <footer class="site-footer">
-            <div class="text-center">
-                2014 - Alvarez.is
-                <a href="index.html#" class="go-top">
-                    <i class="fa fa-angle-up"></i>
-                </a>
-            </div>
-        </footer>
-        <!--footer end-->
     </section>
+
+
+
+    <footer class="site-footer">
+        <div class="text-center">
+            2017 Vintage Coffee and Cafe
+            <a href="index.html#" class="go-top">
+                <i class="fa fa-angle-up"></i>
+            </a>
+        </div>
+    </footer>
 
     <!-- js placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.js"></script>

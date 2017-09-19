@@ -160,6 +160,11 @@
                 </ul>
                 <!--  notification end -->
             </div>
+            <div class="top-menu">
+                <ul class="nav pull-right top-menu">
+                    <li><a class="logout" href="login.html">Logout</a></li>
+                </ul>
+            </div>
         </header>
         <!--header end-->
 
@@ -193,6 +198,12 @@
                             <li><a href="#">Add Users</a></li>
                         </ul>
                     </li>
+
+
+
+
+
+
                 </ul>
                 <!-- sidebar menu end-->
             </div>
@@ -209,7 +220,7 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <h1><i class="fa fa-folder"></i> Add Menu</h1>
+                        <h1><i class="fa fa-newspaper-o"></i> Add Description</h1>
                         @if (count($errors)>0)
                             <div class="alert alert-danger">
                                 <ul>
@@ -225,19 +236,32 @@
                             </div>
                         @endif
 
-                        <form action="{{route('addMenu')}}" method="post">
-
-                            <div class="col-md-6">
+                        <form action="{{route('addDescription')}}" method="post" enctype="multipart/form-data">
+                            <div class="col-md-12">
                                 {{csrf_field()}}
                                 <div class="form-group">
-                                    <label for="name">Menu Name</label>
+                                    <label for="name">Name</label>
                                     <input type="text" name="name" class="form-control" id="name">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="name">Description</label>
+                                    <textarea name="description" class="form-control" rowspan="7"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="img">Image</label>
+                                    <input type="file" class="btn btn-default" name="image ">
                                 </div>
                             </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <button type="submit"class="btn btn-success" >Add Menu</button>
+                                <button type="submit"class="btn btn-success" >Add Description</button>
                             </div>
                         </div>
                             </form>
@@ -250,7 +274,7 @@
         <!--footer start-->
         <footer class="site-footer">
             <div class="text-center">
-                2017. Vintage Coffee and Cafe
+                2014 - Alvarez.is
                 <a href="index.html#" class="go-top">
                     <i class="fa fa-angle-up"></i>
                 </a>

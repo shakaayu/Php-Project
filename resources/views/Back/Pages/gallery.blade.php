@@ -160,6 +160,11 @@
                 </ul>
                 <!--  notification end -->
             </div>
+            <div class="top-menu">
+                <ul class="nav pull-right top-menu">
+                    <li><a class="logout" href="login.html">Logout</a></li>
+                </ul>
+            </div>
         </header>
         <!--header end-->
 
@@ -193,6 +198,12 @@
                             <li><a href="#">Add Users</a></li>
                         </ul>
                     </li>
+
+
+
+
+
+
                 </ul>
                 <!-- sidebar menu end-->
             </div>
@@ -209,7 +220,7 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                        <h1><i class="fa fa-folder"></i> Add Menu</h1>
+                        <h1><i class="fa fa-image"></i> Add Image</h1>
                         @if (count($errors)>0)
                             <div class="alert alert-danger">
                                 <ul>
@@ -225,19 +236,19 @@
                             </div>
                         @endif
 
-                        <form action="{{route('addMenu')}}" method="post">
+                        <form action="{{route('addImage')}}" method="post" enctype="multipart/form-data">
 
                             <div class="col-md-6">
                                 {{csrf_field()}}
                                 <div class="form-group">
-                                    <label for="name">Menu Name</label>
-                                    <input type="text" name="name" class="form-control" id="name">
+                                    <label for="name">Image Name</label>
+                                    <input type="file" name="image" class="btn btn-default" id="name">
                                 </div>
                             </div>
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <button type="submit"class="btn btn-success" >Add Menu</button>
+                                <button type="submit"class="btn btn-success" >Add Image</button>
                             </div>
                         </div>
                             </form>
@@ -250,7 +261,7 @@
         <!--footer start-->
         <footer class="site-footer">
             <div class="text-center">
-                2017. Vintage Coffee and Cafe
+                2014 - Alvarez.is
                 <a href="index.html#" class="go-top">
                     <i class="fa fa-angle-up"></i>
                 </a>
